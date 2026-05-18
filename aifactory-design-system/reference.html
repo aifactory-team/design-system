@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=1120" />
+  <title>small point — Design System</title>
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" />
+
+  <link rel="stylesheet" href="tokens.css?v=2" />
+  <link rel="stylesheet" href="components.css?v=2" />
+  <link rel="stylesheet" href="doc.css?v=2" />
+</head>
+<body>
+
+<main class="doc">
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="doc-header">
+    <div>
+      <div class="eyebrow">Design System · v1.0</div>
+      <h1>small <span class="tag-mint">point</span></h1>
+      <p class="lede">다크그레이와 중립 그레이로 구조를 만들고, 엠버 오렌지를 단일 액션 컬러로, 쨍한 포인트 컬러 7종을 작은 태그에만 쓰는 절제된 시스템.</p>
+    </div>
+    <div class="meta">
+      <div><span class="dot"></span>Pretendard · 4px base · 16px radius · amber #FFA31F</div>
+      <div>Updated 2026.05.14</div>
+    </div>
+  </header>
+
+  <!-- ==================== PRINCIPLES ==================== -->
+  <section class="doc-section">
+    <header>
+      <span class="num">00</span>
+      <h2>Principles</h2>
+      <span class="hint">이 시스템의 근간이 되는 세 가지 규칙.</span>
+    </header>
+
+    <div class="swatch-grid" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="sp-card sp-card--flat">
+        <div class="sp-card__eyebrow">01 · Structure in gray</div>
+        <h3 class="sp-card__title">구조는 그레이로.</h3>
+        <p class="sp-card__body">레이아웃, 테두리, 본문 텍스트까지 — 화면의 90% 이상은 중립 그레이와 다크그레이로만 구성합니다. 텍스트 위계도 컬러가 아닌 명도로.</p>
+      </div>
+      <div class="sp-card sp-card--flat">
+        <div class="sp-card__eyebrow">02 · Amber for action</div>
+        <h3 class="sp-card__title">엠버는 액션에만.</h3>
+        <p class="sp-card__body">엠버 오렌지는 오직 사용자가 "지금 눌러야 할" 하나의 주요 CTA에만. 한 화면에 엠버 서피스는 최대 하나가 원칙.</p>
+      </div>
+      <div class="sp-card sp-card--flat">
+        <div class="sp-card__eyebrow">03 · Points, loud but small</div>
+        <h3 class="sp-card__title">포인트는 작고 쨍하게.</h3>
+        <p class="sp-card__body">7종 포인트 컬러는 채도 높게, 그러나 작은 뱃지·태그 안에서만. 버튼/헤더/카드 서피스에는 절대 쓰지 않습니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== COLORS ==================== -->
+  <section class="doc-section">
+    <header>
+      <span class="num">01</span>
+      <h2>Colors</h2>
+      <span class="hint">Primary · Gray scale · Pastel points</span>
+    </header>
+
+    <!-- Primary + Dark -->
+    <div class="subsection-title">Primary · Dark</div>
+    <div class="swatch-grid" style="grid-template-columns: repeat(2, 1fr);">
+      <div class="swatch">
+        <div class="chip dark" style="background: var(--amber-400);">#FFA31F</div>
+        <div class="meta">
+          <span class="name">Amber 400 · Primary</span>
+          <span class="hex">--amber-400 · CTA, focus ring base</span>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="chip dark" style="background: var(--gray-800);">#2E2E2E</div>
+        <div class="meta">
+          <span class="name">Gray 800 · Primary ink</span>
+          <span class="hex">--gray-800 · 본문, 헤드라인, 어두운 버튼</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Amber ramp -->
+    <div class="subsection-title">Amber-Orange ramp</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="chip" style="background: var(--amber-50);">50</div><div class="meta"><span class="name">Amber 50</span><span class="hex">#FFF6E8</span></div></div>
+      <div class="swatch"><div class="chip" style="background: var(--amber-100);">100</div><div class="meta"><span class="name">Amber 100</span><span class="hex">#FFE6BF</span></div></div>
+      <div class="swatch"><div class="chip" style="background: var(--amber-200);">200</div><div class="meta"><span class="name">Amber 200</span><span class="hex">#FFD28A</span></div></div>
+      <div class="swatch"><div class="chip" style="background: var(--amber-300);">300</div><div class="meta"><span class="name">Amber 300</span><span class="hex">#FFBA54</span></div></div>
+      <div class="swatch"><div class="chip dark" style="background: var(--amber-400);">400 ⭐</div><div class="meta"><span class="name">Amber 400 ⭐</span><span class="hex">#FFA31F</span></div></div>
+      <div class="swatch"><div class="chip dark" style="background: var(--amber-500);">500</div><div class="meta"><span class="name">Amber 500</span><span class="hex">#F28A00</span></div></div>
+      <div class="swatch"><div class="chip dark" style="background: var(--amber-600);">600</div><div class="meta"><span class="name">Amber 600</span><span class="hex">#D0700A</span></div></div>
+      <div class="swatch"><div class="chip dark" style="background: var(--amber-700);">700</div><div class="meta"><span class="name">Amber 700</span><span class="hex">#9E540B</span></div></div>
+    </div>
+
+    <!-- Gray ramp -->
+    <div class="subsection-title">Neutral gray (중립, 순수 회색)</div>
+    <div class="gray-ramp" id="gray-ramp"></div>
+
+    <!-- Point colors -->
+    <div class="subsection-title">Point colors — 작고 쨍하게</div>
+    <div class="demo">
+      <p style="margin: 0 0 var(--sp-4); color: var(--color-text-secondary); font-size: var(--fs-caption);">
+        뱃지·태그·아바타 배경 등 <b>전체 화면 면적의 5% 미만</b>에서만 사용. 채도는 높지만 면적이 작아 시끄럽지 않습니다.
+      </p>
+      <div class="swatch-grid" style="grid-template-columns: repeat(7, 1fr);">
+        <div class="swatch"><div class="chip dark" style="background: var(--pastel-purple);">purple</div><div class="meta"><span class="name">Purple</span><span class="hex">#8A4FE6</span></div></div>
+        <div class="swatch"><div class="chip dark" style="background: var(--pastel-mint);">mint</div><div class="meta"><span class="name">Mint</span><span class="hex">#19C9A3</span></div></div>
+        <div class="swatch"><div class="chip dark" style="background: var(--pastel-blue);">blue</div><div class="meta"><span class="name">Blue</span><span class="hex">#2F7BE8</span></div></div>
+        <div class="swatch"><div class="chip dark" style="background: var(--pastel-pink);">pink</div><div class="meta"><span class="name">Pink</span><span class="hex">#F2418A</span></div></div>
+        <div class="swatch"><div class="chip" style="background: var(--pastel-yellow); color: rgba(0,0,0,0.6);">yellow</div><div class="meta"><span class="name">Yellow</span><span class="hex">#F5C518</span></div></div>
+        <div class="swatch"><div class="chip dark" style="background: var(--pastel-green);">green</div><div class="meta"><span class="name">Green</span><span class="hex">#49B83A</span></div></div>
+        <div class="swatch"><div class="chip dark" style="background: var(--pastel-orange);">orange</div><div class="meta"><span class="name">Orange</span><span class="hex">#FF6A2C</span></div></div>
+      </div>
+
+      <div class="subsection-title" style="margin-top: var(--sp-6);">In use — badges</div>
+      <div class="row">
+        <span class="sp-badge sp-badge--mint">접수중</span>
+        <span class="sp-badge sp-badge--blue">주최</span>
+        <span class="sp-badge sp-badge--purple">주관</span>
+        <span class="sp-badge sp-badge--pink">한정</span>
+        <span class="sp-badge sp-badge--yellow">상금</span>
+        <span class="sp-badge sp-badge--green">운영</span>
+        <span class="sp-badge sp-badge--amber">HOT</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TYPOGRAPHY ==================== -->
+  <section class="doc-section">
+    <header>
+      <span class="num">02</span>
+      <h2>Typography</h2>
+      <span class="hint">Pretendard Variable</span>
+    </header>
+
+    <div class="demo">
+      <div class="type-row">
+        <span class="label">Display</span>
+        <span class="sample" style="font-size: 40px; line-height: 1.2; font-weight: 700; letter-spacing: -0.02em;">AI 경진대회 플랫폼</span>
+        <span class="spec">40 / 48 · 700</span>
+      </div>
+      <div class="type-row">
+        <span class="label">H1 · Page title</span>
+        <span class="sample" style="font-size: 28px; line-height: 1.3; font-weight: 700; letter-spacing: -0.01em;">딥페이크 변조 영상 탐지 AI 경진대회</span>
+        <span class="spec">28 / 36 · 700</span>
+      </div>
+      <div class="type-row">
+        <span class="label">H2 · Section</span>
+        <span class="sample" style="font-size: 22px; line-height: 1.35; font-weight: 700;">참가자 현황 및 리더보드</span>
+        <span class="spec">22 / 30 · 700</span>
+      </div>
+      <div class="type-row">
+        <span class="label">H3 · Card title</span>
+        <span class="sample" style="font-size: 18px; line-height: 1.4; font-weight: 600;">Team Alpha — 딥페이크 탐지 챌린지</span>
+        <span class="spec">18 / 26 · 600</span>
+      </div>
+      <div class="type-row">
+        <span class="label">Body LG</span>
+        <span class="sample" style="font-size: 16px; line-height: 1.55;">최신 딥러닝 기법을 활용해 딥페이크 영상을 탐지하는 AI 경진대회입니다.</span>
+        <span class="spec">16 / 25 · 400</span>
+      </div>
+      <div class="type-row">
+        <span class="label">Body</span>
+        <span class="sample" style="font-size: 14px; line-height: 1.55;">접수 기간 2025.10.01 ~ 2025.10.23 · 기본 본문은 14px를 사용합니다.</span>
+        <span class="spec">14 / 22 · 400</span>
+      </div>
+      <div class="type-row">
+        <span class="label">Caption</span>
+        <span class="sample" style="font-size: 13px; line-height: 1.5; color: var(--color-text-secondary);">접수중 · 마감까지 D-14 · 참가비 무료</span>
+        <span class="spec">13 / 20 · 400</span>
+      </div>
+      <div class="type-row">
+        <span class="label">Small · meta</span>
+        <span class="sample" style="font-size: 12px; line-height: 1.5; color: var(--color-text-tertiary);">참가팀 163 · 총 제출 3,891 · 2025.11.20 마감</span>
+        <span class="spec">12 / 18 · 400</span>
+      </div>
+      <div class="type-row">
+        <span class="label">Tiny · badge</span>
+        <span class="sample" style="font-size: 11px; line-height: 1.45; font-weight: 600; letter-spacing: 0.01em;">진행중 · HOT · 신규대회</span>
+        <span class="spec">11 / 16 · 600</span>
+      </div>
+    </div>
+
+    <div class="subsection-title">Numerals — 가격, 수량</div>
+    <div class="demo">
+      <div class="row" style="gap: var(--sp-8); align-items: baseline;">
+        <div style="font-size: 28px; font-weight: 700; letter-spacing: -0.01em;">0.9821<span style="font-size: 18px; font-weight: 500; color: var(--color-text-tertiary); margin-left: 2px;">점</span></div>
+        <div style="font-size: 22px; font-weight: 700;">47<span style="font-size: 14px; font-weight: 500; color: var(--color-text-tertiary); margin-left: 2px;">위</span></div>
+        <div style="font-size: 18px; font-weight: 600;">2/5<span style="font-size: 13px; font-weight: 500; color: var(--color-text-tertiary); margin-left: 2px;">제출</span></div>
+        <div style="font-family: var(--font-mono); color: var(--color-text-tertiary); font-size: 12px;">tabular-nums, -0.01em</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SPACING ==================== -->
+  <section class="doc-section">
+    <header>
+      <span class="num">03</span>
+      <h2>Spacing</h2>
+      <span class="hint">4px base scale</span>
+    </header>
+
+    <div class="token-grid">
+      <div class="token-card"><div class="viz"><div class="spacing-bar" style="width: 4px;"></div></div><div class="meta"><span class="name">sp-1</span><span class="val">4px</span></div></div>
+      <div class="token-card"><div class="viz"><div class="spacing-bar" style="width: 8px;"></div></div><div class="meta"><span class="name">sp-2</span><span class="val">8px</span></div></div>
+      <div class="token-card"><div class="viz"><div class="spacing-bar" style="width: 12px;"></div></div><div class="meta"><span class="name">sp-3</span><span class="val">12px</span></div></div>
+      <div class="token-card"><div class="viz"><div class="spacing-bar" style="width: 16px;"></div></div><div class="meta"><span class="name">sp-4</span><span class="val">16px</span></div></div>
+      <div class="token-card"><div class="viz"><div class="spacing-bar" style="width: 20px;"></div></div><div class="meta"><span class="name">sp-5</span><span class="val">20px</span></div></div>
+      <div class="token-card"><div class="viz"><div class="spacing-bar" style="width: 24px;"></div></div><div class="meta"><span class="name">sp-6</span><span class="val">24px</span></div></div>
+      <div class="token-card"><div class="viz"><div class="spacing-bar" style="width: 32px;"></div></div><div class="meta"><span class="name">sp-8</span><span class="val">32px</span></div></div>
+      <div class="token-card"><div class="viz"><div class="spacing-bar" style="width: 40px;"></div></div><div class="meta"><span class="name">sp-10</span><span class="val">40px</span></div></div>
+      <div class="token-card"><div class="viz"><div class="spacing-bar" style="width: 48px;"></div></div><div class="meta"><span class="name">sp-12</span><span class="val">48px</span></div></div>
+      <div class="token-card"><div class="viz"><div class="spacing-bar" style="width: 64px;"></div></div><div class="meta"><span class="name">sp-16</span><span class="val">64px</span></div></div>
+    </div>
+  </section>
+
+  <!-- ==================== RADIUS ==================== -->
+  <section class="doc-section">
+    <header>
+      <span class="num">04</span>
+      <h2>Radius</h2>
+      <span class="hint">기본 16px · CTA 16px · Chip/tab pill</span>
+    </header>
+    <div class="token-grid">
+      <div class="token-card"><div class="viz"><div class="radius-shape" style="border-radius: 4px;"></div></div><div class="meta"><span class="name">rd-xs</span><span class="val">4px</span></div></div>
+      <div class="token-card"><div class="viz"><div class="radius-shape" style="border-radius: 6px;"></div></div><div class="meta"><span class="name">rd-sm</span><span class="val">8px</span></div></div>
+      <div class="token-card"><div class="viz"><div class="radius-shape" style="border-radius: 10px;"></div></div><div class="meta"><span class="name">rd-md ⭐</span><span class="val">16px</span></div></div>
+      <div class="token-card"><div class="viz"><div class="radius-shape" style="border-radius: 14px;"></div></div><div class="meta"><span class="name">rd-lg</span><span class="val">20px</span></div></div>
+      <div class="token-card"><div class="viz"><div class="radius-shape" style="border-radius: 20px;"></div></div><div class="meta"><span class="name">rd-xl</span><span class="val">20px</span></div></div>
+      <div class="token-card"><div class="viz"><div class="radius-shape" style="border-radius: 999px;"></div></div><div class="meta"><span class="name">rd-pill</span><span class="val">999px</span></div></div>
+    </div>
+  </section>
+
+  <!-- ==================== SHADOW ==================== -->
+  <section class="doc-section">
+    <header>
+      <span class="num">05</span>
+      <h2>Elevation</h2>
+      <span class="hint">가볍게, 절제된 그림자</span>
+    </header>
+    <div class="token-grid" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));">
+      <div class="token-card"><div class="viz"><div class="shadow-box" style="box-shadow: var(--sh-xs);"></div></div><div class="meta"><span class="name">sh-xs</span><span class="val">subtle lift</span></div></div>
+      <div class="token-card"><div class="viz"><div class="shadow-box" style="box-shadow: var(--sh-sm);"></div></div><div class="meta"><span class="name">sh-sm</span><span class="val">card resting</span></div></div>
+      <div class="token-card"><div class="viz"><div class="shadow-box" style="box-shadow: var(--sh-md);"></div></div><div class="meta"><span class="name">sh-md</span><span class="val">raised card</span></div></div>
+      <div class="token-card"><div class="viz" style="background: var(--gray-100);"><div class="shadow-box" style="box-shadow: var(--sh-lg);"></div></div><div class="meta"><span class="name">sh-lg</span><span class="val">popover / sheet</span></div></div>
+    </div>
+  </section>
+
+  <!-- ==================== BUTTONS ==================== -->
+  <section class="doc-section">
+    <header>
+      <span class="num">06</span>
+      <h2>Buttons</h2>
+      <span class="hint">Primary = mint · Dark = contextual select · Secondary/Ghost = neutrals</span>
+    </header>
+
+    <div class="subsection-title">Variants</div>
+    <div class="demo">
+      <div class="row">
+        <button class="sp-btn sp-btn--md sp-btn--primary">참가 신청하기</button>
+        <button class="sp-btn sp-btn--md sp-btn--dark">제출하기</button>
+        <button class="sp-btn sp-btn--md sp-btn--secondary">규칙 확인</button>
+        <button class="sp-btn sp-btn--md sp-btn--ghost">더보기</button>
+        <button class="sp-btn sp-btn--md sp-btn--primary" disabled>마감</button>
+      </div>
+    </div>
+
+    <div class="subsection-title">Sizes</div>
+    <div class="demo">
+      <div class="row">
+        <button class="sp-btn sp-btn--sm sp-btn--primary">Small 32</button>
+        <button class="sp-btn sp-btn--md sp-btn--primary">Medium 40</button>
+        <button class="sp-btn sp-btn--lg sp-btn--primary">Large 52</button>
+        <button class="sp-btn sp-btn--xl sp-btn--primary" style="min-width: 260px;">참가 신청하기</button>
+      </div>
+    </div>
+
+    <div class="subsection-title">Pill — Filter / Sort</div>
+    <div class="demo">
+      <div class="row">
+        <button class="sp-btn sp-btn--sm sp-btn--secondary sp-btn--pill">↑↓ 최신순</button>
+        <button class="sp-btn sp-btn--sm sp-btn--secondary sp-btn--pill">📊 점수 그래프</button>
+        <button class="sp-btn sp-btn--sm sp-btn--secondary sp-btn--pill">+ 팀 초대</button>
+      </div>
+      <p style="margin-top: 10px; font-size: 12px; color: var(--color-text-tertiary);">
+        <code>sp-btn--pill</code> — <code>border-radius: var(--rd-pill)</code> (999px) · 정렬·필터·단축 액션에 사용
+      </p>
+    </div>
+
+    <div class="subsection-title">Pill — Nav Button</div>
+    <div class="demo">
+      <div class="row" style="align-items: center; gap: 12px; flex-wrap: wrap;">
+        <!-- Ghost pill: 로그인 -->
+        <button class="sp-btn sp-btn--md sp-btn--ghost sp-btn--pill">로그인</button>
+        <!-- Dark pill: 회원가입 -->
+        <button class="sp-btn sp-btn--md sp-btn--dark sp-btn--pill">회원가입</button>
+        <!-- Secondary pill: 검색 -->
+        <button class="sp-btn sp-btn--sm sp-btn--secondary sp-btn--pill" style="padding: 0 14px;">🔍 검색</button>
+      </div>
+      <p style="margin-top: 10px; font-size: 12px; color: var(--color-text-tertiary);">
+        Nav 영역에서 <strong>예외적으로 pill 사용</strong> — 로그인·회원가입·검색 버튼에 한함.<br>
+        기본 버튼은 <code>rd-md (16px)</code> · Nav pill 버튼만 <code>rd-pill (999px)</code> (CLAUDE.md 명시 예외).
+      </p>
+    </div>
+
+    <div class="subsection-title">Pill — Icon Button (Mobile)</div>
+    <div class="demo">
+      <div class="row" style="align-items: center; gap: 12px; flex-wrap: wrap;">
+        <!-- 관심 -->
+        <button class="sp-btn sp-btn--md sp-btn--ghost sp-btn--pill" style="width:44px; height:44px; padding:0; display:inline-flex; align-items:center; justify-content:center; border-radius:12px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+        <!-- 공유 -->
+        <button class="sp-btn sp-btn--md sp-btn--ghost sp-btn--pill" style="width:44px; height:44px; padding:0; display:inline-flex; align-items:center; justify-content:center; border-radius:12px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        </button>
+        <!-- 관리자 (admin-on OFF) -->
+        <button class="sp-btn sp-btn--md sp-btn--ghost" style="width:44px; height:44px; padding:0; display:inline-flex; align-items:center; justify-content:center; border-radius:12px; border-color:var(--gray-200); color:var(--gray-700);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </button>
+        <!-- 관리자 (admin-on ON) -->
+        <button class="sp-btn sp-btn--md sp-btn--dark" style="width:44px; height:44px; padding:0; display:inline-flex; align-items:center; justify-content:center; border-radius:12px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </button>
+      </div>
+      <p style="margin-top: 10px; font-size: 12px; color: var(--color-text-tertiary);">
+        모바일 ≤480px — 아이콘 전용 정사각 버튼 <code>44×44px · border-radius: 12px</code><br>
+        관심·공유: <code>btn--ghost</code> · 관리자 OFF: <code>btn--ghost (gray-200 border)</code> · 관리자 ON: <code>btn--dark (gray-800 fill)</code>
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== BADGES ==================== -->
+  <section class="doc-section">
+    <header>
+      <span class="num">07</span>
+      <h2>Badges</h2>
+      <span class="hint">Dark · Gray · Mint-line · 7 pastels</span>
+    </header>
+
+    <div class="demo">
+      <div class="subsection-title" style="margin-top: 0;">Structural</div>
+      <div class="row">
+        <span class="sp-badge sp-badge--dark">필수</span>
+        <span class="sp-badge sp-badge--gray">선택</span>
+        <span class="sp-badge sp-badge--gray">대회 공지</span>
+        <span class="sp-badge sp-badge--mint-line"><span class="dot"></span>영업중</span>
+      </div>
+
+      <div class="subsection-title">Pastel points</div>
+      <div class="row">
+        <span class="sp-badge sp-badge--mint">접수중</span>
+        <span class="sp-badge sp-badge--blue">주최</span>
+        <span class="sp-badge sp-badge--purple">주관</span>
+        <span class="sp-badge sp-badge--pink">진행중</span>
+        <span class="sp-badge sp-badge--yellow">상금</span>
+        <span class="sp-badge sp-badge--green">운영</span>
+        <span class="sp-badge sp-badge--amber">HOT</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CHIPS & TABS ==================== -->
+  <section class="doc-section">
+    <header>
+      <span class="num">08</span>
+      <h2>Chips · Tabs · Segmented</h2>
+      <span class="hint">Active = dark · Rest = neutral</span>
+    </header>
+
+    <div class="subsection-title">Filter chips</div>
+    <div class="demo">
+      <div class="row">
+        <span class="sp-chip sp-chip--icon-only">🔍</span>
+        <span class="sp-chip sp-chip--active">대회 소개</span>
+        <span class="sp-chip">리더보드</span>
+        <span class="sp-chip">딥페이크 변조 영상 탐지 AI 경진대회 원두</span>
+        <span class="sp-chip">규칙</span>
+      </div>
+    </div>
+
+    <div class="subsection-title">Tabs (underline)</div>
+    <div class="demo">
+      <div class="sp-tabs">
+        <div class="sp-tab sp-tab--active">대회 소개</div>
+        <div class="sp-tab">리더보드 163</div>
+        <div class="sp-tab">데이터</div>
+        <div class="sp-tab">공지사항</div>
+      </div>
+    </div>
+
+    <div class="subsection-title">Segmented (pill)</div>
+    <div class="demo">
+      <div class="row" style="align-items: center; gap: 24px; flex-wrap: wrap;">
+        <!-- 기본: 전체 / 내 팀 -->
+        <div class="sp-segmented">
+          <div class="sp-segmented__item sp-segmented__item--active">전체</div>
+          <div class="sp-segmented__item">내 팀</div>
+        </div>
+        <!-- 리더보드 토글: Public / Private -->
+        <div class="sp-segmented">
+          <div class="sp-segmented__item sp-segmented__item--active">Public</div>
+          <div class="sp-segmented__item">Private 🔒</div>
+        </div>
+      </div>
+      <p style="margin-top: 12px; font-size: 12px; color: var(--color-text-tertiary);">
+        wrapper — <code>background: gray-100 · border-radius: pill · padding: 4px</code><br>
+        active item — <code>background: white · box-shadow: xs · font-semibold</code>
+      </p>
+    </div>
+  </section>
+
+  <!-- ==================== INPUTS ==================== -->
+  <section class="doc-section">
+    <header>
+      <span class="num">09</span>
+      <h2>Inputs</h2>
+      <span class="hint">Text · Search · Radio row</span>
+    </header>
+
+    <div class="demo">
+      <div class="stack" style="max-width: 420px;">
+        <div class="sp-field">
+          <label class="sp-field__label">팀명 검색<span class="req">*</span></label>
+          <input class="sp-input sp-input--search" placeholder="팀명 또는 참가자를 검색하세요" />
+          <div class="sp-field__hint">3자 이상 입력하면 바로 검색됩니다.</div>
+        </div>
+        <div class="sp-field">
+          <label class="sp-field__label">질문·요청사항</label>
+          <input class="sp-input" placeholder="예) 데이터 형식 관련 문의" />
+        </div>
+      </div>
+
+      <div class="subsection-title">Radio row — 제출 유형</div>
+      <div style="max-width: 520px;">
+        <div class="sp-radio sp-radio--checked">
+          <span class="sp-radio__label">
+            <span class="sp-radio__dot"></span>
+            <span class="sp-radio__text">단일 모델 제출</span>
+          </span>
+          <span class="sp-radio__value">최대 5회/일</span>
+        </div>
+        <div class="sp-radio">
+          <span class="sp-radio__label">
+            <span class="sp-radio__dot"></span>
+            <span class="sp-radio__text">앙상블 모델 제출</span>
+          </span>
+          <span class="sp-radio__value">최대 2회/일</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CARDS ==================== -->
+  <section class="doc-section">
+    <header>
+      <span class="num">10</span>
+      <h2>Cards</h2>
+      <span class="hint">Flat · Bordered · Raised</span>
+    </header>
+
+    <div class="swatch-grid" style="grid-template-columns: repeat(3, 1fr);">
+      <!-- Competition card -->
+      <div class="sp-card">
+        <div class="sp-card__eyebrow">
+          <span class="sp-badge sp-badge--amber">HOT</span>
+        </div>
+        <h3 class="sp-card__title">Team Alpha — 딥페이크 탐지 챌린지</h3>
+        <p class="sp-card__body">딥러닝 기반으로 변조된 영상을 정확히 탐지하는 AI 모델을 개발하세요.</p>
+        <div class="sp-card__footer">
+          <div class="sp-card__price">9,200<span class="unit">만원</span></div>
+          <button class="sp-btn sp-btn--sm sp-btn--secondary sp-btn--pill">＋</button>
+        </div>
+      </div>
+
+      <!-- Team card -->
+      <div class="sp-card sp-card--flat">
+        <div class="sp-card__eyebrow">
+          <span class="sp-badge sp-badge--blue">주최</span>
+          <span>· 참가팀 163</span>
+        </div>
+        <h3 class="sp-card__title">이미지 분류 AI 경진대회</h3>
+        <p class="sp-card__body">접수 기간 2025.10.01 ~ 2025.10.23 · 상금 5,000만원</p>
+        <div class="sp-card__footer">
+          <div class="sp-card__price">6,900<span class="unit">원</span></div>
+          <span style="color: var(--color-text-tertiary); font-size: var(--fs-tiny);">제출 248</span>
+        </div>
+      </div>
+
+      <!-- Raised CTA card -->
+      <div class="sp-card sp-card--raised">
+        <div class="sp-card__eyebrow">참가 현황</div>
+        <div class="sp-listrow">
+          <span class="sp-listrow__label">내 순위</span>
+          <span class="sp-listrow__value" style="color: var(--amber-500); font-weight: 600;">47위</span>
+        </div>
+        <div class="sp-listrow">
+          <span class="sp-listrow__label">최고점수</span>
+          <span class="sp-listrow__value" style="color: var(--amber-500); font-weight: 600;">0.8821</span>
+          <span class="sp-listrow__meta" style="color: var(--amber-500); font-weight: 600;">2/5</span>
+        </div>
+        <button class="sp-btn sp-btn--lg sp-btn--primary" style="width: 100%;">제출하기</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== LIST ROWS ==================== -->
+  <section class="doc-section">
+    <header>
+      <span class="num">11</span>
+      <h2>List rows</h2>
+      <span class="hint">정보 패널 · 대회 메타</span>
+    </header>
+    <div class="demo">
+      <div style="max-width: 640px;">
+        <div class="sp-listrow">
+          <span class="sp-listrow__label">내 순위</span>
+          <span class="sp-listrow__value">47위</span>
+          <span class="sp-badge sp-badge--gray">대회 공지</span>
+        </div>
+        <div class="sp-listrow">
+          <span class="sp-listrow__label">모델 제출</span>
+          <span class="sp-listrow__value">최대 5회/일 <span class="sp-badge sp-badge--amber" style="margin-left: 6px;">일 제한 있음</span></span>
+          <span class="sp-listrow__meta">무료</span>
+        </div>
+        <div class="sp-listrow">
+          <span class="sp-listrow__label">팀 구성</span>
+          <span class="sp-listrow__value">최대 5인</span>
+          <span class="sp-listrow__meta">개인 참가 가능</span>
+        </div>
+        <div class="sp-listrow">
+          <span class="sp-listrow__label">데이터 다운로드</span>
+          <span class="sp-listrow__value">참가 신청 후</span>
+          <span class="sp-listrow__meta">무료 제공</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== MOBILE CTA BAR ==================== -->
+  <section class="doc-section">
+    <header>
+      <span class="num">12</span>
+      <h2>Mobile CTA Bar</h2>
+      <span class="hint">≤1024px 하단 고정 · ≤480px 아이콘 전용 (1:1)</span>
+    </header>
+
+    <div class="subsection-title">Tablet 481–1024px — 아이콘 + 텍스트</div>
+    <div class="demo">
+      <div style="background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:12px 20px;display:flex;align-items:center;gap:8px;max-width:560px;">
+        <div style="display:flex;gap:8px;flex-shrink:0;">
+          <button style="display:flex;align-items:center;justify-content:center;gap:6px;height:46px;padding:0 14px;border-radius:12px;border:1px solid var(--gray-200);background:#fff;color:var(--gray-600);font-size:13px;font-weight:600;cursor:default;font-family:inherit;">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>관심
+          </button>
+          <button style="display:flex;align-items:center;justify-content:center;gap:6px;height:46px;padding:0 14px;border-radius:12px;border:1px solid var(--gray-200);background:#fff;color:var(--gray-600);font-size:13px;font-weight:600;cursor:default;font-family:inherit;">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>공유
+          </button>
+          <button style="display:flex;align-items:center;justify-content:center;gap:5px;height:46px;padding:0 12px;border-radius:12px;border:1px solid rgba(255,163,31,.35);background:rgba(255,163,31,.07);color:#D0700A;font-size:13px;font-weight:700;cursor:default;font-family:inherit;">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>관리자
+          </button>
+        </div>
+        <button style="margin-left:auto;display:flex;align-items:center;justify-content:center;gap:8px;height:46px;padding:0 20px;border-radius:12px;border:none;background:var(--amber-400);color:#fff;font-size:15px;font-weight:700;cursor:default;white-space:nowrap;box-shadow:0 4px 14px rgba(255,163,31,.35);font-family:inherit;">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>참가 신청하기
+        </button>
+      </div>
+    </div>
+
+    <div class="subsection-title">Mobile ≤480px — 아이콘 전용 46×46 정사각형</div>
+    <div class="demo">
+      <div style="background:#fff;border:1px solid var(--gray-200);border-radius:12px;padding:12px 20px;display:flex;align-items:center;gap:8px;max-width:360px;">
+        <div style="display:flex;gap:8px;flex-shrink:0;">
+          <button style="display:flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:12px;border:1px solid var(--gray-200);background:#fff;color:var(--gray-600);cursor:default;">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </button>
+          <button style="display:flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:12px;border:1px solid var(--gray-200);background:#fff;color:var(--gray-600);cursor:default;">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          </button>
+          <button style="display:flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:12px;border:1px solid rgba(255,163,31,.35);background:rgba(255,163,31,.07);color:#D0700A;cursor:default;">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </button>
+        </div>
+        <button style="margin-left:auto;display:flex;align-items:center;justify-content:center;gap:8px;height:46px;padding:0 20px;border-radius:12px;border:none;background:var(--amber-400);color:#fff;font-size:15px;font-weight:700;cursor:default;white-space:nowrap;box-shadow:0 4px 14px rgba(255,163,31,.35);font-family:inherit;">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>참가 신청하기
+        </button>
+      </div>
+    </div>
+
+    <div class="subsection-title">참가 완료 후 — 제출하기 상태</div>
+    <div class="demo">
+      <div class="row">
+        <button style="display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 20px;border-radius:12px;border:none;background:#2E2E2E;color:#fff;font-size:15px;font-weight:700;cursor:default;font-family:inherit;">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>제출하기
+        </button>
+      </div>
+      <p style="margin-top:8px;font-size:12px;color:var(--color-text-tertiary);">참가신청 완료 → amber→dark 전환, 아이콘도 upload로 교체</p>
+    </div>
+
+    <div class="subsection-title">Admin Toggle — 데스크탑 버튼 상태</div>
+    <div class="demo">
+      <div class="row">
+        <div>
+          <button style="display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border-radius:16px;border:1px solid var(--gray-200);background:#fff;color:var(--gray-700);font-size:14px;font-weight:600;cursor:default;font-family:inherit;">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>관리자
+          </button>
+          <div style="font-size:11px;color:var(--color-text-tertiary);margin-top:6px;text-align:center;">기본 (OFF)</div>
+        </div>
+        <div>
+          <button style="display:inline-flex;align-items:center;gap:8px;height:44px;padding:0 20px;border-radius:16px;border:1px solid var(--gray-800);background:var(--gray-800);color:#fff;font-size:14px;font-weight:600;cursor:default;font-family:inherit;">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>편집 중
+          </button>
+          <div style="font-size:11px;color:var(--color-text-tertiary);margin-top:6px;text-align:center;">활성 (ON)</div>
+        </div>
+      </div>
+      <p style="margin-top:8px;font-size:12px;color:var(--color-text-tertiary);">btn--ghost (primary ink) 기반 · gray border+white bg → gray-800 solid (body.admin-on 클래스로 전환) · amber CTA 원칙 준수</p>
+    </div>
+  </section>
+
+  <!-- ==================== DO / DONT ==================== -->
+  <section class="doc-section">
+    <header>
+      <span class="num">13</span>
+      <h2>Do / Don't</h2>
+      <span class="hint">color discipline</span>
+    </header>
+
+    <div class="swatch-grid" style="grid-template-columns: repeat(2, 1fr);">
+      <div class="sp-card" style="border-color: var(--amber-300);">
+        <div class="sp-card__eyebrow" style="color: var(--amber-600);">✓ DO</div>
+        <h3 class="sp-card__title">엠버는 한 화면에 하나의 CTA에만</h3>
+        <div class="row" style="margin-top: var(--sp-2);">
+          <button class="sp-btn sp-btn--md sp-btn--primary">참가 신청</button>
+          <button class="sp-btn sp-btn--md sp-btn--secondary">팀 초대</button>
+          <span class="sp-badge sp-badge--pink">한정</span>
+        </div>
+        <p class="sp-card__body" style="margin-top: var(--sp-2);">참가 신청·제출 같은 최종 액션 하나에만 엠버. 보조 액션은 뉴트럴.</p>
+      </div>
+
+      <div class="sp-card" style="border-color: #F3B8B8;">
+        <div class="sp-card__eyebrow" style="color: #C24848;">✕ DON'T</div>
+        <h3 class="sp-card__title">포인트 컬러를 버튼/대형 서피스에 쓰지 않기</h3>
+        <div class="row" style="margin-top: var(--sp-2);">
+          <button class="sp-btn sp-btn--md" style="background: var(--pastel-purple); color: #fff;">참가</button>
+          <button class="sp-btn sp-btn--md" style="background: var(--pastel-pink); color: #fff;">제출</button>
+          <button class="sp-btn sp-btn--md" style="background: var(--pastel-yellow); color: var(--pastel-yellow-ink);">공유</button>
+        </div>
+        <p class="sp-card__body" style="margin-top: var(--sp-2);">쨍한 포인트 컬러가 서피스를 차지하면 브랜드의 절제된 톤이 무너집니다. 포인트는 작은 뱃지·태그 전용.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="doc-footer">
+    <span>small point · Design System v1.1</span>
+    <span>Pretendard · 4px base · 16px radius · amber #FFA31F</span>
+  </footer>
+
+</main>
+
+<script>
+  // Build gray ramp programmatically
+  (function () {
+    const steps = [
+      ["0","#FFFFFF"], ["25","#FAFAFA"], ["50","#F5F5F5"], ["100","#EEEEEE"],
+      ["200","#E0E0E0"], ["300","#C9C9C9"], ["400","#A8A8A8"], ["500","#858585"],
+      ["600","#616161"], ["700","#424242"], ["800","#2E2E2E"], ["900","#1A1A1A"]
+    ];
+    const wrap = document.getElementById("gray-ramp");
+    if (!wrap) return;
+    wrap.innerHTML = steps.map(([lv, hex], i) => {
+      const darkText = i >= 5;
+      const color = darkText ? "rgba(255,255,255,0.78)" : "rgba(0,0,0,0.5)";
+      return `<div class="step" style="background:${hex}; color:${color};">
+                <span class="lv">${lv}</span>
+                <span>${hex}</span>
+              </div>`;
+    }).join("");
+  })();
+</script>
+
+</body>
+</html>

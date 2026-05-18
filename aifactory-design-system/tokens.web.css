@@ -1,0 +1,28 @@
+/*
+ * tokens.web.css — AIFactory Design System
+ * Web layout tokens: sticky heights, top offsets, container, breakpoints
+ *
+ * Breakpoints (use in @media queries):
+ *   sm  640px  — small tablets
+ *   md  768px  — tablets
+ *   lg  1024px — desktop divider (mobile ↔ desktop)
+ *   xl  1280px — wide desktop
+ */
+
+:root {
+  /* ── Sticky Element Heights ── */
+  --h-banner: 28px;
+  --h-nav:    60px;
+  --h-tab:    52px;
+  --h-status: 40px;
+
+  /* ── Cumulative Top Offsets ── */
+  --top-nav:     28px;   /* banner */
+  --top-tab:     88px;   /* banner + nav */
+  --top-status: 140px;   /* banner + nav + tab */
+  --top-content: 180px;  /* banner + nav + tab + status */
+
+  /* ── Container ── */
+  --container-max: 1440px;
+  --container-pad: 60px;
+}

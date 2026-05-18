@@ -1,0 +1,287 @@
+/* =========================================================
+   Documentation page layout + component demo styles
+   ========================================================= */
+
+body { background: var(--gray-25); }
+
+.doc {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 72px 56px 120px;
+}
+
+/* ---------- Doc header ---------- */
+.doc-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--sp-8);
+  padding-bottom: var(--sp-8);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--sp-12);
+}
+.doc-header .eyebrow {
+  font-size: var(--fs-small);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--sp-3);
+  font-weight: var(--fw-medium);
+}
+.doc-header h1 {
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--sp-3);
+}
+.doc-header .tag-mint {
+  color: var(--amber-500);
+}
+.doc-header p.lede {
+  font-size: var(--fs-body-lg);
+  color: var(--color-text-secondary);
+  max-width: 560px;
+  margin: 0;
+}
+.doc-header .meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  align-items: flex-end;
+  font-size: var(--fs-small);
+  color: var(--color-text-tertiary);
+  font-family: var(--font-mono);
+}
+.doc-header .meta .dot {
+  display: inline-block;
+  width: 8px; height: 8px;
+  border-radius: 999px;
+  background: var(--mint-400);
+  margin-right: 6px;
+  vertical-align: 1px;
+}
+
+/* ---------- Section ---------- */
+.doc-section { margin-bottom: var(--sp-16); }
+.doc-section > header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-6);
+}
+.doc-section > header .num {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  color: var(--color-text-tertiary);
+  letter-spacing: 0.04em;
+}
+.doc-section > header h2 {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-bold);
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.doc-section > header .hint {
+  margin-left: auto;
+  font-size: var(--fs-small);
+  color: var(--color-text-tertiary);
+}
+.doc-section > p.intro {
+  font-size: var(--fs-body);
+  color: var(--color-text-secondary);
+  max-width: 720px;
+  margin: 0 0 var(--sp-6);
+}
+
+.subsection-title {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: var(--sp-8) 0 var(--sp-4);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+.subsection-title::before {
+  content: "";
+  width: 4px; height: 4px;
+  background: var(--gray-400);
+  border-radius: 999px;
+}
+
+/* ---------- Demo surface (example area) ---------- */
+.demo {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--rd-md);
+  padding: var(--sp-6);
+}
+.demo + .demo { margin-top: var(--sp-3); }
+.demo .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  align-items: center;
+}
+.demo .col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+.demo .stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+/* ---------- Color swatches ---------- */
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: var(--sp-3);
+}
+.swatch {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--rd-md);
+  overflow: hidden;
+}
+.swatch .chip {
+  height: 88px;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--sp-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-tiny);
+  color: rgba(0,0,0,0.45);
+}
+.swatch .chip.dark { color: rgba(255,255,255,0.7); }
+.swatch .meta {
+  padding: var(--sp-3);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.swatch .meta .name {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  color: var(--color-text-primary);
+}
+.swatch .meta .hex {
+  font-family: var(--font-mono);
+  font-size: var(--fs-tiny);
+  color: var(--color-text-tertiary);
+}
+
+/* ---------- Gray ramp ---------- */
+.gray-ramp {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  border-radius: var(--rd-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+.gray-ramp .step {
+  aspect-ratio: 1 / 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--sp-2);
+  font-family: var(--font-mono);
+  font-size: 10px;
+}
+.gray-ramp .step .lv {
+  opacity: 0.7;
+  margin-bottom: 2px;
+}
+
+/* ---------- Type specimen ---------- */
+.type-row {
+  display: grid;
+  grid-template-columns: 170px 1fr 110px;
+  gap: var(--sp-6);
+  align-items: baseline;
+  padding: var(--sp-4) 0;
+  border-bottom: 1px dashed var(--color-border);
+}
+.type-row:last-child { border-bottom: 0; }
+.type-row .label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  color: var(--color-text-tertiary);
+}
+.type-row .sample {
+  color: var(--color-text-primary);
+}
+.type-row .spec {
+  font-family: var(--font-mono);
+  font-size: var(--fs-tiny);
+  color: var(--color-text-tertiary);
+  text-align: right;
+}
+
+/* ---------- Spacing / radius / shadow cards ---------- */
+.token-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--sp-3);
+}
+.token-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--rd-md);
+  background: var(--color-bg);
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+.token-card .viz {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gray-50);
+  border-radius: var(--rd-sm);
+}
+.token-card .spacing-bar {
+  background: var(--mint-400);
+  height: 12px;
+}
+.token-card .radius-shape {
+  width: 52px; height: 52px;
+  background: var(--gray-800);
+}
+.token-card .shadow-box {
+  width: 56px; height: 56px;
+  background: var(--color-bg);
+  border-radius: var(--rd-sm);
+}
+.token-card .meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.token-card .meta .name {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+}
+.token-card .meta .val {
+  font-family: var(--font-mono);
+  font-size: var(--fs-tiny);
+  color: var(--color-text-tertiary);
+}
+
+/* ---------- Footer ---------- */
+.doc-footer {
+  margin-top: var(--sp-16);
+  padding-top: var(--sp-6);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: var(--fs-tiny);
+  color: var(--color-text-tertiary);
+}

@@ -1,0 +1,248 @@
+/*
+ * components.css — AIFactory Design System
+ * Base components: reset, buttons, tags, typography, grids, callouts, etc.
+ * Not layout-specific; safe to use in any context.
+ */
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--gray-800);
+  background: var(--gray-25);
+  padding-top: var(--h-banner);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+code {
+  font-family: ui-monospace, "JetBrains Mono", monospace;
+}
+
+/* ── Inner Wrapper ── */
+.pi {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+/* ── Button ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: var(--fs-tab);
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background 120ms ease;
+}
+
+.btn--ghost {
+  background: #fff;
+  color: var(--gray-700);
+  border: 1px solid var(--gray-200);
+}
+.btn--ghost:hover { background: var(--gray-50); }
+
+.btn--amber {
+  background: var(--amber-400);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(255, 163, 31, .25);
+}
+.btn--amber:hover { background: var(--amber-500); }
+
+.btn--dark {
+  background: var(--gray-800);
+  color: #fff;
+}
+.btn--dark:hover { background: var(--gray-700); }
+
+.btn--pill  { border-radius: 999px; }
+.btn--sm    { height: 36px; padding: 0 14px; font-size: var(--fs-label); }
+.btn--full  { width: 100%; justify-content: center; }
+
+/* ── Tag ── */
+.tag {
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: var(--fs-label);
+  font-weight: 500;
+}
+
+/* ── Badge ── */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* ── Headings ── */
+h2.h2 {
+  font-size: var(--fs-body);
+  font-weight: 600;
+  color: var(--gray-900);
+  letter-spacing: -.01em;
+}
+
+h3.h3 {
+  font-size: var(--fs-tab);
+  font-weight: 600;
+  color: var(--gray-800);
+  letter-spacing: -.01em;
+  margin: 20px 0 10px;
+}
+
+h4.h4 {
+  font-size: var(--fs-label);
+  font-weight: 600;
+  color: var(--gray-800);
+  margin: 16px 0 8px;
+}
+
+/* ── Body Text ── */
+.body-txt {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--gray-600);
+}
+.body-txt p + p       { margin-top: 14px; }
+.body-txt strong      { color: var(--gray-800); font-weight: 600; }
+.body-txt ul          { list-style: disc; padding-left: 22px; display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+
+/* ── Callout ── */
+.callout {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 16px 18px;
+  border-radius: 12px;
+  background: var(--gray-50);
+  margin: 16px 0;
+}
+
+.callout-ico {
+  font-size: 18px;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.callout-body {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--gray-600);
+}
+.callout-body strong             { font-weight: 600; }
+.c-info .callout-body strong     { color: var(--pastel-blue); }
+.c-warn .callout-body strong     { color: var(--pastel-orange); }
+.c-ok   .callout-body strong     { color: var(--pastel-green); }
+
+/* ── Grid Utilities ── */
+.g2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.g3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.g4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+
+/* ── Data Table ── */
+.dtable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-body);
+}
+.dtable thead tr       { border-bottom: 2px solid var(--gray-200); }
+.dtable th             { padding: 12px 16px; font-size: var(--fs-tab); font-weight: 400; color: var(--gray-400); text-align: left; }
+.dtable tbody tr       { border-bottom: 1px solid var(--gray-100); }
+.dtable tbody tr:hover { background: var(--gray-50); }
+.dtable td             { padding: 14px 16px; color: var(--gray-600); }
+.dtable .bold          { font-weight: 600; color: var(--gray-800); }
+.dtable .accent        { font-weight: 600; color: var(--amber-500); }
+
+/* ── Stat Mini Card ── */
+.scard {
+  padding: 16px;
+  border-radius: 10px;
+  background: var(--gray-50);
+  text-align: center;
+}
+.scard-w .scard {
+  background: #fff;
+  border: 1px solid var(--gray-100);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .05);
+}
+.scard-val {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--gray-800);
+  font-variant-numeric: tabular-nums;
+}
+.scard-lbl {
+  font-size: var(--fs-label);
+  color: var(--gray-500);
+  margin-top: 4px;
+}
+
+/* ── Segmented Control ── */
+.seg-ctrl {
+  display: inline-flex;
+  padding: 3px;
+  background: var(--gray-100);
+  border-radius: 999px;
+  gap: 2px;
+}
+.seg-item {
+  padding: 7px 18px;
+  border-radius: 999px;
+  font-size: var(--fs-label);
+  font-weight: 500;
+  color: var(--gray-500);
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  font-family: var(--font-sans);
+  transition: all .12s;
+}
+.seg-item--active {
+  background: #fff;
+  color: var(--gray-900);
+  font-weight: 600;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .08);
+}
+
+/* ── TOC Links ── */
+.toc-head {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--gray-400);
+  margin-bottom: 10px;
+}
+.toc-link {
+  display: block;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: var(--gray-500);
+  border-left: 2px solid transparent;
+  line-height: 1.4;
+  transition: all .15s;
+}
+.toc-link:hover       { color: var(--gray-800); background: var(--gray-50); }
+.toc-link.active      { color: var(--gray-900); font-weight: 600; border-left-color: var(--gray-800); }
