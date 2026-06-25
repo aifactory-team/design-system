@@ -287,14 +287,14 @@ p.hero-desc {
 }
 .sidebar-toc {
   background: #fff;
-  border-radius: 16px;
+  border-radius: var(--rd-md);
   box-shadow: 0 2px 12px rgba(0, 0, 0, .08);
   padding: 20px;
   margin-bottom: 10px;
 }
 .sidebar-actions {
   background: var(--gray-50);
-  border-radius: 16px;
+  border-radius: var(--rd-md);
   padding: 14px;
   display: flex;
   flex-direction: column;
@@ -309,7 +309,7 @@ p.hero-desc {
 /* ── Section Card ── */
 .card {
   background: #fff;
-  border-radius: 16px;
+  border-radius: var(--rd-md);
   box-shadow: 0 2px 12px rgba(0, 0, 0, .08);
   padding: 32px 36px;
   margin-bottom: 20px;
@@ -459,7 +459,7 @@ p.hero-desc {
 .team-search {
   flex: 1;
   height: 44px;
-  border-radius: 16px;
+  border-radius: var(--rd-md);
   border: 1px solid transparent;
   background: var(--gray-100);
   padding: 0 14px 0 40px;

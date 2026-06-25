@@ -43,7 +43,7 @@ code {
   gap: 8px;
   height: 44px;
   padding: 0 20px;
-  border-radius: 16px;
+  border-radius: var(--rd-md);
   border: none;
   cursor: pointer;
   font-family: var(--font-sans);

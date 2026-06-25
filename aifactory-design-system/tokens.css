@@ -19,7 +19,7 @@
   --gray-900: #1A1A1A;
 
   /* ── Amber ── */
-  --amber-400: #FFA31F;
+  --amber-400: #FE9A00;
   --amber-500: #F28A00;
 
   /* ── Pastel Colors ── */
@@ -52,7 +52,7 @@
 
   /* ── Border Radius ── */
   --rd-sm:   8px;
-  --rd-md:   16px;
+  --rd-md:   15px;
   --rd-lg:   20px;
   --rd-pill: 999px;
 
