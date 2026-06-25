@@ -1,0 +1,84 @@
+/*
+ * tokens.css — Assiworks Design System
+ * Design tokens: colors, unit/engine colors, typography, radius, shadow
+ */
+
+:root {
+  /* ── Brand ── */
+  --brand:        #702EFF;
+  --brand-hover:  #5A25CC;
+  --brand-50:     #F4EFFF;
+  --brand-100:    #EFE9FF;
+  --brand-tint:   rgba(112, 46, 255, .08);
+
+  /* ── Gray Palette (zinc) ── */
+  --gray-0:   #FFFFFF;
+  --gray-25:  #FAFAFA;
+  --gray-50:  #F4F4F5;
+  --gray-100: #F1F1F2;
+  --gray-200: #E4E4E7;
+  --gray-300: #D4D4D8;
+  --gray-400: #A1A1AA;
+  --gray-500: #71717A;
+  --gray-600: #52525B;
+  --gray-700: #3F3F46;
+  --gray-800: #27272A;
+  --gray-900: #18181B;
+
+  /* ── Unit / Engine Colors ──
+   * 메뉴 분류는 색이 아니라 위계로 하되, 에디터(플로우)·칩에서 타입 식별용으로 사용 */
+  --rag:        #14B8A6;  --rag-line:      #99F6E4;  --rag-bg:      #CCFBF1;
+  --tool:       #2563EB;  --tool-line:     #BFDBFE;  --tool-bg:     #DBEAFE;
+  --loop:       #FF622E;  --loop-line:     #FED7AA;  --loop-bg:     #FFEDD5;
+  --operator:   #702EFF;  --operator-line: #D8C9FF;
+  --cheliped:   #0EA5E9;  --cheliped-line: #BAE6FD;
+  --unit-in:    #008236;  /* 입력(Input) */
+  --unit-out:   #8058DB;  /* 출력(Output) */
+
+  /* ── Status Colors (loop/job 상태) ── */
+  --status-ready:      #71717A;
+  --status-running:    #702EFF;
+  --status-done:       #10B981;
+  --status-error:      #EF4444;
+  --status-warn:       #F59E0B;
+  --status-paused:     #0EA5E9;
+
+  /* ── Icon Set (2종: Default / Selected) ── */
+  --icon-default-fill:   #F1F1F2;
+  --icon-default-stroke: #9F9FA9;
+  --icon-selected-fill:  #D4C0FF;
+  --icon-selected-stroke:#702EFF;
+
+  /* ── Font ── */
+  --font-sans: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "JetBrains Mono", Menlo, monospace;
+
+  /* ── Typography Scale ── */
+  --fs-hero:  40px;
+  --fs-h1:    24px;
+  --fs-h2:    18px;
+  --fs-h3:    15px;
+  --fs-body:  14px;
+  --fs-sm:    13px;
+  --fs-label: 12px;
+  --fs-help:  11px;
+
+  /* ── Line Heights ── */
+  --lh-tight: 1.2;
+  --lh-body:  1.5;
+  --lh-loose: 1.75;
+
+  /* ── Border Radius ── */
+  --rd-sm:   6px;
+  --rd-md:   8px;
+  --rd-lg:   12px;
+  --rd-xl:   16px;
+  --rd-2xl:  20px;
+  --rd-pill: 999px;
+
+  /* ── Shadows ── */
+  --sh-sm: 0 1px 2px rgba(24, 24, 27, .05);
+  --sh-md: 0 4px 16px rgba(24, 24, 27, .06);
+  --sh-lg: 0 16px 32px rgba(24, 24, 27, .08);
+  --sh-xl: 0 20px 40px rgba(0, 0, 0, .04);
+}

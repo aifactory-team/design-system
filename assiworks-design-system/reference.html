@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Assiworks Design System — Reference</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css" />
+<link rel="stylesheet" href="tokens.css" />
+<link rel="stylesheet" href="components.css" />
+<style>
+  body { background: var(--gray-25); padding: 0 0 80px; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 40px; }
+  header.top { padding: 40px 0 24px; border-bottom: 1px solid var(--gray-200); margin-bottom: 32px; }
+  header.top img { height: 28px; }
+  header.top h1 { font-size: var(--fs-h1); font-weight: 800; margin-top: 14px; }
+  header.top p { color: var(--gray-500); font-size: var(--fs-sm); margin-top: 4px; }
+  section { margin: 40px 0; }
+  section > h2 { font-size: var(--fs-h2); font-weight: 800; margin-bottom: 4px; }
+  section > .desc { color: var(--gray-500); font-size: var(--fs-sm); margin-bottom: 18px; }
+  .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 12px; }
+  .sw { border: 1px solid var(--gray-200); border-radius: var(--rd-md); overflow: hidden; background: #fff; }
+  .sw .chip-c { height: 56px; }
+  .sw .meta { padding: 7px 10px; }
+  .sw .meta .n { font-size: var(--fs-label); font-weight: 700; }
+  .sw .meta .h { font-size: var(--fs-help); color: var(--gray-400); font-family: var(--font-mono); }
+  .type-row { display: flex; align-items: baseline; gap: 14px; padding: 8px 0; border-bottom: 1px dashed var(--gray-200); }
+  .type-row .lbl { width: 90px; font-size: var(--fs-help); color: var(--gray-400); font-family: var(--font-mono); }
+  .icons { display: grid; grid-template-columns: repeat(auto-fill, minmax(108px, 1fr)); gap: 10px; }
+  .ic { display: flex; flex-direction: column; align-items: center; gap: 7px; padding: 14px 6px 9px; border: 1px solid var(--gray-200); border-radius: var(--rd-md); background: #fff; }
+  .ic img { width: 30px; height: 30px; }
+  .ic .nm { font-size: 10px; color: var(--gray-500); text-align: center; word-break: break-all; line-height: 1.3; }
+  .panel { background:#fff; border:1px solid var(--gray-200); border-radius: var(--rd-lg); padding: 20px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <img src="assets/logo-assiworks.svg" alt="Assiworks" />
+    <h1>Assiworks Design System</h1>
+    <p>브랜드 토큰 · 유닛 색 · 컴포넌트 · 아이콘 셋 · 리빙 레퍼런스</p>
+  </header>
+
+  <!-- Brand & Gray -->
+  <section>
+    <h2>Color — Brand &amp; Gray</h2>
+    <p class="desc">Primary <code>#702EFF</code> (Pretendard). Gray = zinc scale.</p>
+    <div class="swatches" id="sw-base"></div>
+  </section>
+
+  <!-- Unit / Engine -->
+  <section>
+    <h2>Color — Unit / Engine</h2>
+    <p class="desc">메뉴 분류는 위계로 하되, 플로우 에디터·칩에서 타입 식별용으로 사용. RAG=청록, Tool=파랑, Loop=주황.</p>
+    <div class="swatches" id="sw-unit"></div>
+  </section>
+
+  <!-- Status -->
+  <section>
+    <h2>Color — Status</h2>
+    <div class="swatches" id="sw-status"></div>
+  </section>
+
+  <!-- Typography -->
+  <section>
+    <h2>Typography</h2>
+    <p class="desc">Pretendard Variable.</p>
+    <div class="panel" id="type"></div>
+  </section>
+
+  <!-- Buttons -->
+  <section>
+    <h2>Buttons</h2>
+    <div class="row">
+      <button class="btn btn--primary">Primary</button>
+      <button class="btn btn--ghost">Ghost</button>
+      <button class="btn btn--danger">Danger</button>
+      <button class="btn btn--primary btn--sm">Small</button>
+    </div>
+  </section>
+
+  <!-- Chips / Badges / Status -->
+  <section>
+    <h2>Chips · Badges · Status</h2>
+    <div class="row" style="margin-bottom:14px;">
+      <span class="chip chip--rag">RAG</span>
+      <span class="chip chip--tool">Tool</span>
+      <span class="chip chip--loop">Loop</span>
+      <span class="chip chip--operator">Operator</span>
+      <span class="chip chip--cheliped">Cheliped</span>
+    </div>
+    <div class="row">
+      <span class="status"><span class="status-dot status-dot--running"></span>Running</span>
+      <span class="status"><span class="status-dot status-dot--done"></span>Done</span>
+      <span class="status"><span class="status-dot status-dot--error"></span>Error</span>
+      <span class="status"><span class="status-dot status-dot--paused"></span>Paused</span>
+      <span class="badge badge--gray">draft</span>
+    </div>
+  </section>
+
+  <!-- Controls -->
+  <section>
+    <h2>Controls</h2>
+    <div class="row" style="gap:24px;">
+      <div class="seg">
+        <button class="seg__btn" aria-selected="true">Canvas</button>
+        <button class="seg__btn">Run</button>
+      </div>
+      <input class="input" style="max-width:240px" placeholder="Search by name or ID" />
+      <button class="toggle" aria-pressed="true" aria-label="toggle"></button>
+    </div>
+  </section>
+
+  <!-- Card -->
+  <section>
+    <h2>Card</h2>
+    <div class="card" style="max-width:280px;">
+      <div class="card__hd"><span class="t">Operator</span><span style="color:var(--gray-400);font-weight:700">···</span></div>
+      <div class="card__row"><span class="k">Model</span><span class="v mono">claude-sonnet-4</span></div>
+      <div class="card__row"><span class="k">Mode</span><span class="v">AI · 자율 실행</span></div>
+    </div>
+  </section>
+
+  <!-- Icons -->
+  <section>
+    <h2>Icons</h2>
+    <p class="desc">유닛 아이콘 셋 — Default(회색) / Selected(브랜드) 2종 + inFlow + unit-blocks. <code>assets/icons</code>, <code>assets/unit-blocks</code>.</p>
+    <div class="icons" id="icons"></div>
+  </section>
+</div>
+
+<script>
+  const css = getComputedStyle(document.documentElement);
+  const v = (n) => css.getPropertyValue(n).trim();
+  const swatch = (name, token) => `<div class="sw"><div class="chip-c" style="background:${v(token)}"></div><div class="meta"><div class="n">${name}</div><div class="h">${v(token)}</div></div></div>`;
+
+  document.getElementById('sw-base').innerHTML =
+    [['Brand','--brand'],['Brand hover','--brand-hover'],['Brand 50','--brand-50']].map(([n,t])=>swatch(n,t)).join('') +
+    ['0','50','100','200','300','400','500','600','700','800','900'].map(g=>swatch('gray-'+g,'--gray-'+g)).join('');
+
+  document.getElementById('sw-unit').innerHTML =
+    [['RAG','--rag'],['Tool','--tool'],['Loop','--loop'],['Operator','--operator'],['Cheliped','--cheliped'],['Input','--unit-in'],['Output','--unit-out']].map(([n,t])=>swatch(n,t)).join('');
+
+  document.getElementById('sw-status').innerHTML =
+    [['ready','--status-ready'],['running','--status-running'],['done','--status-done'],['error','--status-error'],['warn','--status-warn'],['paused','--status-paused']].map(([n,t])=>swatch(n,t)).join('');
+
+  document.getElementById('type').innerHTML =
+    [['hero','--fs-hero','Welcome to Assiworks'],['h1','--fs-h1','페이지 제목'],['h2','--fs-h2','섹션 제목'],['h3','--fs-h3','카드 제목'],['body','--fs-body','본문 텍스트입니다'],['sm','--fs-sm','보조 텍스트'],['label','--fs-label','라벨'],['help','--fs-help','도움말 / 캡션']]
+    .map(([n,t,s])=>`<div class="type-row"><span class="lbl">${n} · ${v(t)}</span><span style="font-size:${v(t)};font-weight:${n==='hero'?800:n[0]==='h'?700:400}">${s}</span></div>`).join('');
+
+  const ICONS = "icon_agent_Default icon_agent_Selected icon_air_Default icon_air_Selected icon_basic_Default icon_basic_Selected icon_branch_Default icon_branch_Selected icon_connections_Default icon_connections_Selected icon_db_Default icon_db_Selected icon_factory_Default icon_factory_Selected icon_flow_Default icon_flow_Selected icon_flow_inFlow icon_input_Default icon_loop_Default icon_loop_Selected icon_loop_inFlow icon_monitoring_Default icon_monitoring_Selected icon_mypage_Default icon_mypage_Selected icon_node_Default icon_node_Selected icon_operator_Default icon_operator_Selected icon_operator_inFlow icon_output_Default icon_sandbox_Default icon_sandbox_Selected icon_schedule_Default icon_schedule_Selected icon_settings_Default icon_settings_Selected icon_studio_Default icon_studio_Selected icon_tool_Default icon_tool_Selected icon_tool_inFlow".split(' ');
+  const UNITS = "unit-in unit-out unit-tool unit-operator unit-loop unit-flow".split(' ');
+  document.getElementById('icons').innerHTML =
+    ICONS.map(n=>`<div class="ic"><img src="assets/icons/${n}.svg" alt="${n}"><span class="nm">${n.replace('icon_','')}</span></div>`).join('') +
+    UNITS.map(n=>`<div class="ic"><img src="assets/unit-blocks/${n}.svg" alt="${n}"><span class="nm">${n}</span></div>`).join('');
+</script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+/*
+ * components.css — Assiworks Design System
+ * Base components: reset, buttons, chips/tags, badges, cards, inputs,
+ * segmented control, sidebar nav item, status dot. Context-agnostic.
+ */
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--gray-900);
+  background: var(--gray-50);
+}
+a { text-decoration: none; color: inherit; }
+code, .mono { font-family: var(--font-mono); font-size: var(--fs-help); }
+
+/* ── Button ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 16px;
+  border: none;
+  border-radius: var(--rd-md);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 120ms ease;
+}
+.btn--primary { background: var(--brand); color: #fff; }
+.btn--primary:hover { background: var(--brand-hover); }
+.btn--ghost { background: #fff; color: var(--gray-700); border: 1px solid var(--gray-200); }
+.btn--ghost:hover { background: var(--gray-50); }
+.btn--danger { background: #fff; color: var(--status-error); border: 1px solid #FECACA; }
+.btn--danger:hover { background: #FEF2F2; }
+.btn--sm   { height: 28px; padding: 0 10px; font-size: var(--fs-label); }
+.btn--full { width: 100%; }
+
+/* ── Chip (engine / type) — 중립 배경 + 타입 라인색 ── */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--rd-md);
+  background: #fff;
+  font-size: var(--fs-help);
+  font-weight: 700;
+  color: var(--gray-600);
+}
+.chip--rag      { border-color: var(--rag-line);      color: var(--rag); }
+.chip--tool     { border-color: var(--tool-line);     color: var(--tool); }
+.chip--loop     { border-color: var(--loop-line);     color: var(--loop); }
+.chip--operator { border-color: var(--operator-line); color: var(--operator); }
+.chip--cheliped { border-color: var(--cheliped-line); color: var(--cheliped); }
+
+/* ── Badge (solid) ── */
+.badge {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: var(--rd-pill);
+  font-size: var(--fs-help);
+  font-weight: 700;
+  color: #fff;
+}
+.badge--gray  { background: var(--gray-100); color: var(--gray-600); }
+
+/* ── Status dot + label ── */
+.status { display: inline-flex; align-items: center; gap: 6px; font-size: var(--fs-label); font-weight: 600; }
+.status-dot { width: 6px; height: 6px; border-radius: var(--rd-pill); background: var(--gray-400); }
+.status-dot--running { background: var(--status-running); animation: aw-pulse 1.4s ease-in-out infinite; }
+.status-dot--done    { background: var(--status-done); }
+.status-dot--error   { background: var(--status-error); }
+.status-dot--warn    { background: var(--status-warn); }
+.status-dot--paused  { background: var(--status-paused); }
+@keyframes aw-pulse { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+
+/* ── Card ── */
+.card {
+  background: #fff;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--rd-xl);
+  box-shadow: var(--sh-md);
+}
+.card__hd { display: flex; align-items: center; gap: 8px; padding: 12px 14px 10px; }
+.card__hd .t { flex: 1; font-size: var(--fs-h3); font-weight: 700; color: var(--gray-900); }
+.card__row { display: flex; justify-content: space-between; align-items: center; padding: 6px 14px; font-size: var(--fs-sm); }
+.card__row .k { color: var(--gray-500); }
+.card__row .v { font-weight: 600; color: var(--gray-900); }
+
+/* ── Input ── */
+.input {
+  width: 100%;
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--rd-md);
+  font-size: var(--fs-body);
+  color: var(--gray-900);
+  background: #fff;
+}
+.input:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 2px var(--brand-tint); }
+
+/* ── Segmented control (Canvas|Run, 탭 등) ── */
+.seg { display: inline-flex; align-items: center; gap: 2px; padding: 2px; border-radius: var(--rd-md); background: var(--gray-50); }
+.seg__btn {
+  height: 28px; padding: 0 12px; border: none; border-radius: var(--rd-sm);
+  background: transparent; color: var(--gray-500);
+  font-size: var(--fs-label); font-weight: 600; cursor: pointer;
+}
+.seg__btn[aria-selected="true"] { background: #fff; color: var(--gray-900); box-shadow: var(--sh-sm); }
+
+/* ── Sidebar nav item ── */
+.nav-item {
+  display: flex; align-items: center; gap: 8px; width: 100%;
+  padding: 6px 10px; border-radius: var(--rd-md);
+  font-size: var(--fs-body); color: var(--gray-700);
+  background: transparent; border: none; cursor: pointer; text-align: left;
+}
+.nav-item:hover { background: var(--gray-100); }
+.nav-item[aria-current="true"] { background: var(--brand-tint); color: var(--brand); font-weight: 600; }
+
+/* ── Toggle ── */
+.toggle { position: relative; width: 36px; height: 20px; border-radius: var(--rd-pill); background: var(--gray-300); border: none; cursor: pointer; transition: background 120ms; }
+.toggle[aria-pressed="true"] { background: var(--brand); }
+.toggle::after { content: ""; position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: var(--rd-pill); background: #fff; transition: left 120ms; }
+.toggle[aria-pressed="true"]::after { left: 18px; }
