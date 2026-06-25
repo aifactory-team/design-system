@@ -1,11 +1,10 @@
-/*
- * tokens.css — AIFactory Design System
- * Design tokens: colors, typography, spacing, radius, shadow
- */
+/* =========================================================
+   small point — Design Tokens
+   ========================================================= */
 
 :root {
-  /* ── Gray Palette ── */
-  --gray-0:   #FFF;
+  /* ---------- Neutral Gray Scale (중립, 순수 회색) ---------- */
+  --gray-0:   #FFFFFF;
   --gray-25:  #FAFAFA;
   --gray-50:  #F5F5F5;
   --gray-100: #EEEEEE;
@@ -15,14 +14,30 @@
   --gray-500: #858585;
   --gray-600: #616161;
   --gray-700: #424242;
-  --gray-800: #2E2E2E;
+  --gray-800: #2E2E2E; /* 메인 다크 */
   --gray-900: #1A1A1A;
 
-  /* ── Amber ── */
-  --amber-400: #FE9A00;
+  /* ---------- Amber-Orange (Primary CTA) ---------- */
+  --amber-50:  #FFF6E8;
+  --amber-100: #FFE6BF;
+  --amber-200: #FFD28A;
+  --amber-300: #FFBA54;
+  --amber-400: #FE9A00;   /* ⭐ Primary */
   --amber-500: #F28A00;
+  --amber-600: #D0700A;
+  --amber-700: #9E540B;
 
-  /* ── Pastel Colors ── */
+  /* Legacy mint aliases — kept so existing references still compile but re-mapped to amber */
+  --mint-50:  var(--amber-50);
+  --mint-100: var(--amber-100);
+  --mint-200: var(--amber-200);
+  --mint-300: var(--amber-300);
+  --mint-400: var(--amber-400);
+  --mint-500: var(--amber-500);
+  --mint-600: var(--amber-600);
+  --mint-700: var(--amber-700);
+
+  /* ---------- Point Colors (7종, 썽에서 되돌아오는 체도) ---------- */
   --pastel-mint:   #19C9A3;
   --pastel-blue:   #2F7BE8;
   --pastel-purple: #8A4FE6;
@@ -31,33 +46,98 @@
   --pastel-green:  #49B83A;
   --pastel-orange: #FF6A2C;
 
-  /* ── Font ── */
-  --font-sans: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont, "Noto Sans KR", sans-serif;
+  /* 채도 높은 포인트 배경 위 텍스트 — 흰색 */
+  --pastel-mint-ink:   #FFFFFF;
+  --pastel-blue-ink:   #FFFFFF;
+  --pastel-purple-ink: #FFFFFF;
+  --pastel-pink-ink:   #FFFFFF;
+  --pastel-yellow-ink: #4A3A00;
+  --pastel-green-ink:  #FFFFFF;
+  --pastel-orange-ink: #FFFFFF;
 
-  /* ── Typography Scale ── */
-  --fs-hero:  36px;
-  --fs-desc:  17px;
-  --fs-h2:    26px;
-  --fs-h3:    20px;
-  --fs-h4:    17px;
-  --fs-body:  16px;
-  --fs-tab:   15px;
-  --fs-label: 13px;
-  --fs-help:  12px;
+  /* ---------- Semantic ---------- */
+  --color-bg:              var(--gray-0);
+  --color-bg-subtle:       var(--gray-50);
+  --color-bg-muted:        var(--gray-100);
+  --color-border:          var(--gray-200);
+  --color-border-strong:   var(--gray-300);
+  --color-text-primary:    var(--gray-800);
+  --color-text-secondary:  var(--gray-600);
+  --color-text-tertiary:   var(--gray-500);
+  --color-text-disabled:   var(--gray-400);
+  --color-text-inverse:    var(--gray-0);
 
-  /* ── Line Heights ── */
-  --lh-hero: 1.25;
-  --lh-desc: 1.6;
-  --lh-body: 1.75;
+  --color-primary:         var(--amber-400);
+  --color-primary-hover:   var(--amber-500);
+  --color-primary-pressed: var(--amber-600);
+  --color-primary-ink:     #FFFFFF;  /* amber CTA 위 글씨는 흰색 */
 
-  /* ── Border Radius ── */
-  --rd-sm:   8px;
-  --rd-md:   15px;
-  --rd-lg:   20px;
+  --color-danger:          #E45B5B;
+  --color-warning:         #E8A23D;
+  --color-success:         #19C9A3;
+  --color-info:            #5B8FE4;
+
+  /* ---------- Typography ---------- */
+  --font-sans: "Pretendard", "Pretendard Variable",
+               -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+               "Noto Sans KR", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+
+  /* display / heading / body / caption */
+  --fs-display: 40px;  --lh-display: 1.2;
+  --fs-h1:      28px;  --lh-h1:      1.3;
+  --fs-h2:      22px;  --lh-h2:      1.35;
+  --fs-h3:      18px;  --lh-h3:      1.4;
+  --fs-body-lg: 16px;  --lh-body-lg: 1.55;
+  --fs-body:    14px;  --lh-body:    1.55;
+  --fs-caption: 13px;  --lh-caption: 1.5;
+  --fs-small:   12px;  --lh-small:   1.5;
+  --fs-tiny:    11px;  --lh-tiny:    1.45;
+
+  /* ---------- Spacing (4px base) ---------- */
+  --sp-0:  0px;
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  20px;
+  --sp-6:  24px;
+  --sp-8:  32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+
+  /* ---------- Radius ---------- */
+  --rd-xs:   4px;
+  --rd-sm:   8px;   /* 소형 버튼, 인풋, 네브링크 */
+  --rd-md:   15px;  /* ⭐ 기본 — 버튼, 카드, 박스 */
+  --rd-lg:   20px;  /* 모달, 팝오버, 드롭존 */
+  --rd-xl:   24px;
   --rd-pill: 999px;
 
-  /* ── Shadows ── */
-  --sh-sm: 0 2px 8px rgba(0, 0, 0, .06);
-  --sh-md: 0 2px 12px rgba(0, 0, 0, .08);
-  --sh-lg: 0 8px 24px rgba(0, 0, 0, .12);
+  /* ---------- Shadow ---------- */
+  --sh-xs: 0 1px 2px rgba(0,0,0,0.04);
+  --sh-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --sh-md: 0 4px 12px rgba(0,0,0,0.06), 0 2px 4px rgba(0,0,0,0.04);
+  --sh-lg: 0 12px 32px rgba(0,0,0,0.08), 0 4px 8px rgba(0,0,0,0.04);
+  --sh-focus: 0 0 0 3px rgba(254,154,0,0.32);
+}
+
+/* ---------- Reset-ish base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--color-text-primary);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss01", "tnum";
 }

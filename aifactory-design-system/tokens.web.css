@@ -1,28 +1,81 @@
-/*
- * tokens.web.css — AIFactory Design System
- * Web layout tokens: sticky heights, top offsets, container, breakpoints
- *
- * Breakpoints (use in @media queries):
- *   sm  640px  — small tablets
- *   md  768px  — tablets
- *   lg  1024px — desktop divider (mobile ↔ desktop)
- *   xl  1280px — wide desktop
- */
+/* =========================================================
+   small point — Web tokens (responsive scale + containers)
+   ========================================================= */
 
 :root {
-  /* ── Sticky Element Heights ── */
-  --h-banner: 28px;
-  --h-nav:    60px;
-  --h-tab:    52px;
-  --h-status: 40px;
+  /* ---------- Breakpoints (values only — use in media queries) ---------- */
+  --bp-sm: 640px;    /* mobile landscape */
+  --bp-md: 768px;    /* tablet */
+  --bp-lg: 1024px;   /* desktop */
+  --bp-xl: 1280px;   /* wide */
+  --bp-2xl: 1536px;  /* ultrawide */
 
-  /* ── Cumulative Top Offsets ── */
-  --top-nav:     28px;   /* banner */
-  --top-tab:     88px;   /* banner + nav */
-  --top-status: 140px;   /* banner + nav + tab */
-  --top-content: 180px;  /* banner + nav + tab + status */
+  /* ---------- Layout containers ---------- */
+  --container-sm: 640px;
+  --container-md: 960px;
+  --container-lg: 1200px;
+  --container-xl: 1440px;
 
-  /* ── Container ── */
-  --container-max: 1440px;
-  --container-pad: 60px;
+  /* ---------- Header / nav heights ---------- */
+  --header-h: 60px;     /* global nav */
+  --h-nav: 60px;        /* alias */
+  --subnav-h: 52px;     /* task subnav / tabs bar */
+  --sidebar-w: 240px;
+
+  /* ---------- Desktop-tuned type scale (mobile base lives in tokens.css) ---------- */
+  /* Desktop body bumps from 14 -> 16 for readability on larger screens. */
+  --fs-body-web:    16px;  --lh-body-web:    1.6;
+  --fs-caption-web: 14px;  --lh-caption-web: 1.55;
+  --fs-small-web:   13px;  --lh-small-web:   1.5;
+
+  /* ---------- Click target (web uses smaller than touch) ---------- */
+  --target-mouse: 32px;  /* desktop toolbars, secondary actions */
+  --target-mixed: 40px;  /* default — safe for both mouse & touch */
+  --target-touch: 44px;  /* mobile web, primary CTA */
+
+  /* ---------- Z-index stack ---------- */
+  --z-base:     0;
+  --z-raised:   10;
+  --z-sticky:   100;
+  --z-header:   200;
+  --z-dropdown: 500;
+  --z-modal:    1000;
+  --z-toast:    2000;
+}
+
+/* =========================================================
+   Desktop type bump — apply >=1024px
+   ========================================================= */
+@media (min-width: 1024px) {
+  :root {
+    --fs-body:    16px;  --lh-body:    1.6;
+    --fs-caption: 14px;  --lh-caption: 1.55;
+    --fs-small:   13px;  --lh-small:   1.5;
+  }
+}
+
+/* =========================================================
+   Container utility
+   ========================================================= */
+.sp-container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 16px;
+  max-width: var(--container-lg);
+}
+@media (min-width: 768px)  { .sp-container { padding-inline: 24px; } }
+@media (min-width: 1024px) { .sp-container { padding-inline: 32px; } }
+
+.sp-container--sm { max-width: var(--container-sm); }
+.sp-container--md { max-width: var(--container-md); }
+.sp-container--xl { max-width: var(--container-xl); }
+
+/* =========================================================
+   Focus ring (web: keyboard accessibility)
+   Applied globally to interactive elements via :focus-visible.
+   ========================================================= */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: none;
+  box-shadow: var(--sh-focus);
+  border-radius: var(--rd-sm);
 }
